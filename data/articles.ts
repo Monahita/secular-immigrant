@@ -18,7 +18,7 @@ export const articles: Article[] = [
   title: "چرا سکولاریسم برای آزادی ضروری است؟",
   excerpt: "نگاهی کوتاه به نقش سکولاریسم در دفاع از آزادی، کرامت انسانی و حقوق بشر.",
   content: "این متن موقت است. بعداً مقاله کامل در این قسمت قرار می‌گیرد.",
-  image: "/images/secularism.jpg",
+  image: "/images/women-rights.jpg",
   publishedAt: "تیر ۱۴۰۵",
   readTime: "۵ دقیقه",
 },
@@ -28,7 +28,7 @@ export const articles: Article[] = [
   title: "چرا سکولاریسم برای آزادی ضروری است؟",
   excerpt: "نگاهی کوتاه به نقش سکولاریسم در دفاع از آزادی، کرامت انسانی و حقوق بشر.",
   content: "این متن موقت است. بعداً مقاله کامل در این قسمت قرار می‌گیرد.",
-  image: "/images/secularism.jpg",
+  image: "/images/my-journey.jpg",
   publishedAt: "تیر ۱۴۰۵",
   readTime: "۵ دقیقه",
 }

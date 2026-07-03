@@ -1,9 +1,17 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-
+import Image from "next/image";
+<Image
+  src="/images/contact.jpg"
+  alt="تماس با مهاجر سکولار"
+  width={1600}
+  height={900}
+  className="w-full h-56 md:h-64 lg:h-72 object-cover rounded-3xl mb-10"
+/>
 export default function ContactPage() {
   return (
+    
     <>
       <Navbar />
 
