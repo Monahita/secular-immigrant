@@ -1,10 +1,11 @@
 ---
 title: "چرا سکولاریسم برای آزادی ضروری است؟"
+slug: "why-secularism-matters"
 excerpt: "نگاهی کوتاه به نقش سکولاریسم در دفاع از آزادی، کرامت انسانی و حقوق بشر."
+image: "/images/why-secularism-matters.jpg"
 category: "سکولاریسم"
 publishedAt: "تیر ۱۴۰۵"
 readTime: "۵ دقیقه"
-image: "/images/secularism.jpg"
 ---
 
 # چرا سکولاریسم برای آزادی ضروری است؟

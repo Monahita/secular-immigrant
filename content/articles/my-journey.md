@@ -1,12 +1,12 @@
 ---
-title: "حقوق زنان و حق انتخاب پوشش"
-excerpt: "..."
-category: "حقوق زنان"
+title: "مهاجرت و ابعاد آن"
+slug: "my-journey"
+excerpt: "تحولات در یک مهاجر و نگاه او به جامعه میزبان"
+image: "/images/my-journey.jpg"
+category: "مهاجرت و سکولاریسم و آزادی"
 publishedAt: "تیر ۱۴۰۵"
 readTime: "۴ دقیقه"
-image: "/images/women-rights.jpg"
 ---
-
-# حقوق زنان و حق انتخاب پوشش
+مهاجرت، تبعید، آزادی
 
 این متن موقت است.

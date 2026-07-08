@@ -13,7 +13,6 @@ export function getArticleBySlug(slug: string) {
   const fullPath = path.join(articlesDirectory, `${realSlug}.md`);
 
   const fileContents = fs.readFileSync(fullPath, "utf8");
-
   const { data, content } = matter(fileContents);
 
   return {
@@ -26,7 +25,19 @@ export function getArticleBySlug(slug: string) {
 export function getAllArticles() {
   const slugs = getArticleSlugs();
 
-  const articles = slugs.map((slug) => getArticleBySlug(slug));
+  const articles = slugs.map((slug) => {
+    const article = getArticleBySlug(slug);
+
+    return {
+      slug: article.slug,
+      title: article.title,
+      excerpt: article.excerpt,
+      category: article.category,
+      publishedAt: article.publishedAt,
+      readTime: article.readTime,
+      image: article.image,
+    };
+  });
 
   return articles.sort((a: any, b: any) =>
     a.publishedAt > b.publishedAt ? -1 : 1

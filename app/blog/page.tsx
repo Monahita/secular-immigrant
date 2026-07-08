@@ -1,9 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { articles } from "@/data/articles";
+import { getAllArticles } from "@/lib/articles";
 import Link from "next/link";
 
 export default function BlogPage() {
+  const articles = getAllArticles();
   return (
     <>
       <Navbar />
@@ -23,7 +24,7 @@ export default function BlogPage() {
 
             {articles.map((article) => (
               <article
-                key={article.id}
+                key={article.slug}
                 className="bg-white rounded-2xl shadow-sm border border-gray-200 hover:shadow-lg transition overflow-hidden"
               >
                 <div className="h-48 bg-orange-100 flex items-center justify-center text-5xl">
