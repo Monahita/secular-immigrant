@@ -34,7 +34,7 @@ export default function BlogPage() {
                 <div className="p-6">
 
                   <span className="text-sm text-gray-500">
-                    {article.date}
+                    {article.publishedAt}
                   </span>
 
                   <h2 className="mt-3 text-xl font-bold">
