@@ -55,18 +55,20 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.article-content h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+.article-content h2{
+  font-size:1.75rem;
+  font-weight:700;
+  margin-top:4rem;
+  margin-bottom:1rem;
+  color:#111827;
 }
 
-.article-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-top: 2rem;
-  margin-bottom: 0.8rem;
+.article-content h3{
+  font-size:1.35rem;
+  font-weight:700;
+  margin-top:2.5rem;
+  margin-bottom:.8rem;
+  color:#1F2937;
 }
 
 .article-content p {
@@ -112,4 +114,137 @@ body {
   color: #444;
   font-style: italic;
   margin: 2rem 0;
+}
+/* ==========================================
+   Article Typography - Phase 1
+   ========================================== */
+
+.article-content{
+  max-width:900px;
+  margin:auto;
+}
+
+.article-content hr{
+  margin:4rem 0;
+  border:none;
+  border-top:1px solid #E5E7EB;
+}
+
+.article-content h1{
+  font-size:2rem;
+  line-height:1.5;
+  font-weight:700;
+  color:#1f2937;
+  margin-top:2.5rem;
+  margin-bottom:1.2rem;
+}
+
+.article-content h2{
+  font-size:1.6rem;
+  line-height:1.6;
+  font-weight:700;
+  color:#1f2937;
+  margin-top:2.5rem;
+  margin-bottom:1rem;
+}
+
+.article-content h3{
+  font-size:1.3rem;
+  font-weight:700;
+  color:#374151;
+  margin-top:2rem;
+  margin-bottom:.8rem;
+}
+
+.article-content p{
+  font-size:1.12rem;
+  line-height:2.25;
+  color:#374151;
+  margin:1.5rem 0;
+}
+
+.article-content a{
+  color:#F4A261;
+  text-decoration:none;
+  font-weight:500;
+  transition:.2s;
+}
+
+.article-content a:hover{
+  color:#E89045;
+}
+
+
+.article-content ul,
+.article-content ol{
+  margin:1.8rem 0;
+  padding-right:1.5rem;
+}
+
+.article-content li{
+  margin:.8rem 0;
+  line-height:2;
+}
+
+.article-content blockquote {
+  border-right: 5px solid #F4A261;
+  background: #cfccc9;
+  border-radius: 14px;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+  font-size: 1.15rem;
+  color: #444;
+}
+
+.article-content blockquote p {
+  margin: 0;
+}
+
+.article-content img{
+  width:100%;
+  border-radius:20px;
+  margin:3rem 0;
+}
+
+.article-content table {
+  width: 100%;
+}
+
+.article-content code {
+  background: #F3F4F6;
+  padding: .15rem .35rem;
+  border-radius: 6px;
+  font-size: .95rem;
+}
+
+.article-content pre {
+  border-radius: 16px;
+}
+
+
+/* ==========================================
+   Article Blockquote
+   ========================================== */
+
+.article-content blockquote{
+  margin:3rem 0;
+  padding:1.5rem 2rem;
+
+  background:#f5f1ea;
+
+  border-right:5px solid #F4A261;
+
+  border-radius:18px;
+
+  font-size:1.25rem;
+
+  line-height:2.2;
+
+  color:#374151;
+
+  font-weight:500;
+}
+
+.article-content blockquote p{
+  margin:0;
 }

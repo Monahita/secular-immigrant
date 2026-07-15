@@ -81,41 +81,58 @@ export default async function ArticlePage({
 
           {/* Article */}
 
-          <article className="lg:col-span-3">
+  <article className="lg:col-span-3 mx-auto max-w-4xl">
 
-            <span className="inline-block rounded-full bg-orange-100 px-4 py-2 text-orange-700">
-              {article.category}
-            </span>
+  {/* Hero */}
 
-            <h1 className="mt-6 text-5xl font-bold">
-              {article.title}
-            </h1>
+  <header className="mb-16">
 
-            <p className="mt-6 text-xl leading-9 text-gray-600">
-              {article.excerpt}
-            </p>
+    <span className="inline-flex items-center rounded-full bg-orange-100 px-4 py-2 text-sm font-medium text-orange-700">
+      {article.category}
+    </span>
 
-            <div className="mt-6 flex items-center gap-6 text-sm text-gray-500">
-              <span>📅 {article.publishedAt}</span>
-              <span>⏱ {article.readTime}</span>
-            </div>
+    <h1 className="mt-6 text-3xl md:text-4xl font-bold leading-tight text-gray-900">
+          {article.title}
+    </h1>
 
-            <Image
-              src={article.image}
-              alt={article.title}
-              width={1600}
-              height={900}
-              className="mt-10 mb-12 w-full h-[420px] rounded-3xl object-cover shadow-xl"
-            />
+    <p className="mt-6 max-w-3xl text-xl leading-9 text-gray-600">
+      {article.excerpt}
+    </p>
 
-            <article className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-[#F4A261] prose-blockquote:border-r-[#F4A261] prose-blockquote:text-gray-700">
+    <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-gray-500">
 
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeSlug]}
-              >
-                {article.content}
-              </ReactMarkdown>
+      <div className="flex items-center gap-2">
+        <span>📅</span>
+        <span>{article.publishedAt}</span>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <span>⏱</span>
+        <span>{article.readTime}</span>
+      </div>
+
+    </div>
+
+  </header>
+
+  {/* Hero Image */}
+
+  <img
+  src={article.image}
+  alt={article.title}
+  className=" mb-14 h-[260px] md:h-[300px] w-full rounded-3xl object-cover shadow-lg"
+/>
+  {/* Article */}
+
+  <article className="article-content">
+
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeSlug]}
+    >
+      {article.content}
+    </ReactMarkdown>
+
 
             </article>
 

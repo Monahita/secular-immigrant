@@ -8,8 +8,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
 
 const articlesDirectory = path.join(
   process.cwd(),
@@ -66,21 +64,9 @@ export function getArticleBySlug(
 export async function getArticleContent(
   slug: string
 ): Promise<Article | null> {
-  const article = getArticleBySlug(slug);
-
-  if (!article) {
-    return null;
-  }
-
-  const processedContent = await remark()
-    .use(html)
-    .process(article.content);
-
-  return {
-    ...article,
-    content: processedContent.toString(),
-  };
+  return getArticleBySlug(slug);
 }
+
 
 export function getAllArticles(): Article[] {
   const slugs = getArticleSlugs();
