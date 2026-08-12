@@ -1,25 +1,33 @@
 import type { Viewport } from "next";
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { getSiteSettings } from "@/lib/content";
 import "./globals.css";
 
 const vazir = Vazirmatn({
   subsets: ["arabic"],
   display: "swap",
 });
+
+const site = getSiteSettings();
+
 export const viewport: Viewport = {
   themeColor: "#F4A261",
 };
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://secular-immigrant.com"),
+  metadataBase: new URL("https://farsi.autonomy-secular.site"),
 
   title: {
-    default: "مهاجر سکولار",
-    template: "%s | مهاجر سکولار",
+    default: site.siteName || "مهاجر سکولار",
+    template: `%s | ${site.siteName || "مهاجر سکولار"}`,
   },
 
   description:
-    "مجله شخصی درباره آزادی، سکولاریسم، حقوق زنان، حقوق بشر و تجربه مهاجرت.",
+    site.tagline ||
+    "مجله‌ای برای آزادی، سکولاریسم، حقوق زنان، حقوق بشر و تجربه مهاجرت.",
 
   keywords: [
     "سکولاریسم",
@@ -32,30 +40,27 @@ export const metadata: Metadata = {
     "ایران",
   ],
 
-  authors: [
-    {
-      name: "مهاجر سکولار",
-    },
-  ],
+  authors: [{ name: site.siteName || "مهاجر سکولار" }],
 
-  creator: "مهاجر سکولار",
-
-  publisher: "مهاجر سکولار",
+  creator: site.siteName || "مهاجر سکولار",
+  publisher: site.siteName || "مهاجر سکولار",
 
   openGraph: {
-    title: "مهاجر سکولار",
+    title: site.siteName || "مهاجر سکولار",
     description:
+      site.tagline ||
       "یادداشت‌ها و مقاله‌هایی درباره آزادی، سکولاریسم، حقوق زنان، حقوق بشر و مهاجرت.",
-    url: "https://secular-immigrant.com",
-    siteName: "مهاجر سکولار",
+    url: "https://farsi.autonomy-secular.site",
+    siteName: site.siteName || "مهاجر سکولار",
     locale: "fa_IR",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "مهاجر سکولار",
+    title: site.siteName || "مهاجر سکولار",
     description:
+      site.tagline ||
       "یادداشت‌ها و مقاله‌هایی درباره آزادی، سکولاریسم، حقوق زنان و مهاجرت.",
   },
 
@@ -73,7 +78,9 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className={vazir.className}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

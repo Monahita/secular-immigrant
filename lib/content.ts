@@ -9,6 +9,23 @@ export function getPage(slug: string) {
 
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
+  const { data, content } = matter(fileContents);
+
+  return {
+    frontmatter: data,
+    content,
+  };
+}
+
+export function getSiteSettings() {
+  const fullPath = path.join(
+    contentDirectory,
+    "settings",
+    "site.md"
+  );
+
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+
   const { data } = matter(fileContents);
 
   return data;

@@ -3,15 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
+    "dev": "tinacms dev -c \"next dev\"",
     "build": "tinacms build && next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1102.0",
+    "cloudinary": "^2.10.0",
     "decap-cms-app": "^3.14.1",
     "gray-matter": "^4.0.3",
     "next": "16.2.9",
+    "next-tinacms-cloudinary": "^27.0.2",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-markdown": "^10.1.0",

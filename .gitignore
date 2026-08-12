@@ -43,3 +43,7 @@ next-env.d.ts
 node_modules
 .env
 tina/__generated__
+
+/backup/
+/backup-script/
+app/**/page-old.tsx

@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ArticleMedia from "@/components/ArticleMedia";
 import TableOfContents from "@/components/TableOfContents";
 
+import { formatDate } from "@/lib/date";
 import { extractToc } from "@/lib/toc";
+
 import {
   getArticleContent,
   getArticleSlugs,
@@ -36,9 +37,7 @@ export async function generateMetadata({
 
   const article = await getArticleContent(slug);
 
-  if (!article) {
-    return {};
-  }
+  if (!article) return {};
 
   return {
     title: article.title,
@@ -47,11 +46,18 @@ export async function generateMetadata({
     openGraph: {
       title: article.title,
       description: article.excerpt,
-      images: [
-        {
-          url: article.image,
-        },
-      ],
+      url: `https://farsi.autonomy-secular.site/blog/${slug}`,
+      siteName: "مهاجر سکولار",
+      locale: "fa_IR",
+      type: "article",
+      images: [],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: [],
     },
   };
 }
@@ -69,144 +75,125 @@ export default async function ArticlePage({
 
   const toc = extractToc(article.content);
 
-  const { previous, next } = getAdjacentArticles(slug);
+  const { previous, next } =
+    getAdjacentArticles(slug);
 
   return (
-    <>
-      <Navbar />
+        <main className="max-w-7xl mx-auto px-6 py-20">
+      <div className="grid lg:grid-cols-4 gap-12">
 
-      <main className="max-w-7xl mx-auto px-6 py-20">
+        {/* مقاله */}
 
-        <div className="grid lg:grid-cols-4 gap-12">
+        <article className="lg:col-span-3 mx-auto max-w-4xl">
+
+          {/* Header */}
+
+          <header className="mb-12">
+
+            <span className="inline-block rounded-full bg-orange-100 px-4 py-2 text-sm text-orange-700">
+              {article.category}
+            </span>
+
+            <h1 className="mt-6 text-5xl font-extrabold leading-tight">
+              {article.title}
+            </h1>
+
+            {article.subtitle && (
+              <p className="mt-6 text-2xl text-gray-600 leading-10">
+                {article.subtitle}
+              </p>
+            )}
+
+            <div className="mt-8 flex flex-wrap gap-6 text-sm text-gray-500">
+
+              <span>
+                📅 {formatDate(article.publishedAt)}
+              </span>
+
+              <span>
+                🕒 {article.readTime}
+              </span>
+
+            </div>
+
+          </header>
+
+          {/* Media */}
+
+          <ArticleMedia article={article} />
 
           {/* Article */}
 
-  <article className="lg:col-span-3 mx-auto max-w-4xl">
+          <div className="prose prose-lg prose-neutral max-w-none leading-9">
 
-  {/* Hero */}
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeSlug]}
+            >
+              {article.content}
+            </ReactMarkdown>
 
-  <header className="mb-16">
+          </div>
 
-    <span className="inline-flex items-center rounded-full bg-orange-100 px-4 py-2 text-sm font-medium text-orange-700">
-      {article.category}
-    </span>
+          {/* Navigation */}
 
-    <h1 className="mt-6 text-3xl md:text-4xl font-bold leading-tight text-gray-900">
-          {article.title}
-    </h1>
+          <div className="mt-20 border-t border-gray-200 pt-10">
 
-    <p className="mt-6 max-w-3xl text-xl leading-9 text-gray-600">
-      {article.excerpt}
-    </p>
-
-    <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-gray-500">
-
-      <div className="flex items-center gap-2">
-        <span>📅</span>
-        <span>{article.publishedAt}</span>
-      </div>
-
-      <div className="flex items-center gap-2">
-        <span>⏱</span>
-        <span>{article.readTime}</span>
-      </div>
-
-    </div>
-
-  </header>
-
-  {/* Hero Image */}
-
-  <img
-  src={article.image}
-  alt={article.title}
-  className=" mb-14 h-[260px] md:h-[300px] w-full rounded-3xl object-cover shadow-lg"
-/>
-  {/* Article */}
-
-  <article className="article-content">
-
-    <ReactMarkdown
-      remarkPlugins={[remarkGfm]}
-      rehypePlugins={[rehypeSlug]}
-    >
-      {article.content}
-    </ReactMarkdown>
-
-
-            </article>
-
-            <div className="mt-20 border-t pt-10 grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
 
               <div>
-
                 {previous && (
+                  <Link
+                    href={`/blog/${previous.slug}`}
+                    className="block rounded-xl border border-gray-200 p-6 hover:border-[#F4A261] transition"
+                  >
+                    <div className="text-sm text-gray-500 mb-2">
+                      ← مقاله قبلی
+                    </div>
 
-                  <>
-                    <p className="mb-2 text-sm text-gray-500">
-                      مقاله قبلی
-                    </p>
-
-                    <Link
-                      href={`/blog/${previous.slug}`}
-                      className="block rounded-2xl border p-6 hover:border-[#F4A261] transition"
-                    >
-                      <h3 className="font-bold text-lg">
-                        ← {previous.title}
-                      </h3>
-                    </Link>
-
-                  </>
-
+                    <div className="font-bold">
+                      {previous.title}
+                    </div>
+                  </Link>
                 )}
-
               </div>
 
               <div className="text-left">
-
                 {next && (
+                  <Link
+                    href={`/blog/${next.slug}`}
+                    className="block rounded-xl border border-gray-200 p-6 hover:border-[#F4A261] transition"
+                  >
+                    <div className="text-sm text-gray-500 mb-2">
+                      مقاله بعدی →
+                    </div>
 
-                  <>
-                    <p className="mb-2 text-sm text-gray-500">
-                      مقاله بعدی
-                    </p>
-
-                    <Link
-                      href={`/blog/${next.slug}`}
-                      className="block rounded-2xl border p-6 hover:border-[#F4A261] transition"
-                    >
-                      <h3 className="font-bold text-lg">
-                        {next.title} →
-                      </h3>
-                    </Link>
-
-                  </>
-
+                    <div className="font-bold">
+                      {next.title}
+                    </div>
+                  </Link>
                 )}
-
               </div>
 
             </div>
 
-          </article>
+          </div>
 
-          {/* Table of Contents */}
+        </article>
 
-          <aside className="hidden lg:block">
+        {/* TOC */}
 
-            <div className="sticky top-28">
+        <aside className="hidden lg:block">
 
-              <TableOfContents items={toc} />
+          <div className="sticky top-28">
 
-            </div>
+            <TableOfContents items={toc} />
 
-          </aside>
+          </div>
 
-        </div>
+        </aside>
 
-      </main>
-
-      <Footer />
-    </>
+      </div>
+    </main>
   );
 }

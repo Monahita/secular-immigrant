@@ -17,11 +17,21 @@ const articlesDirectory = path.join(
 export type Article = {
   slug: string;
   title: string;
+  subtitle?: string;
   excerpt: string;
   category: string;
+  tags?: string[];
   publishedAt: string;
+  updatedAt?: string;
   readTime: string;
-  image: string;
+  featured: boolean;
+  media?: {
+    gallery?: string[];
+    youtube?: string;
+    video?: string;
+    audio?: string;
+    pdf?: string;
+  };
   content: string;
 };
 
@@ -54,11 +64,11 @@ export function getArticleBySlug(
 
   const frontMatter = data as ArticleFrontMatter;
 
-  return {
-    slug: realSlug,
-    ...frontMatter,
-    content,
-  };
+ return {
+  slug: realSlug,
+  ...frontMatter,
+  content,
+};
 }
 
 export async function getArticleContent(
@@ -75,9 +85,13 @@ export function getAllArticles(): Article[] {
     .map((slug) => getArticleBySlug(slug))
     .filter((article): article is Article => article !== null);
 
-  return articles.sort((a, b) =>
-    a.publishedAt > b.publishedAt ? -1 : 1
-  );
+  
+  return articles.sort(
+  (a, b) =>
+    new Date(b.publishedAt).getTime() -
+    new Date(a.publishedAt).getTime()
+);
+
 }
 
 export function getAdjacentArticles(
@@ -91,7 +105,6 @@ export function getAdjacentArticles(
   const index = articles.findIndex(
     (article) => article.slug === slug
   );
-
   return {
     previous:
       index > 0 ? articles[index - 1] : null,
@@ -101,4 +114,17 @@ export function getAdjacentArticles(
         ? articles[index + 1]
         : null,
   };
+} 
+export function getCategories() {
+  const articles = getAllArticles();
+
+  const categories = Array.from(
+    new Set(
+      articles
+        .map((article) => article.category)
+        .filter(Boolean)
+    )
+  );
+
+  return categories.sort();
 }
