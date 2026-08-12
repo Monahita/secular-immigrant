@@ -3,13 +3,16 @@
 import { useEffect, useMemo, useState } from "react";
 import MediaCard from "./MediaCard";
 
+type MediaItem = {
+  public_id: string;
+  display_name: string;
+  secure_url: string;
+  resource_type: string;
+  format: string;
+};
+
 type MediaGridProps = {
-refreshKey?: number;
-public_id: string;
-display_name: string;
-secure_url: string;
-resource_type: string;
-format: string;
+  refreshKey?: number;
 };
 
 type Filter = "all" | "image" | "video" | "pdf" | "audio";
@@ -17,15 +20,15 @@ type Filter = "all" | "image" | "video" | "pdf" | "audio";
 export default function MediaGrid({
   refreshKey,
 }: MediaGridProps) {
-const [items, setItems] = useState<MediaItem[]>([]);
-const [filter, setFilter] = useState<Filter>("all");
-const [search, setSearch] = useState("");
-const [loading, setLoading] = useState(true);
-const [error, setError] = useState("");
+  const [items, setItems] = useState<MediaItem[]>([]);
+  const [filter, setFilter] = useState<Filter>("all");
+  const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-useEffect(() => {
-  loadMedia();
-}, [refreshKey]);
+  useEffect(() => {
+    loadMedia();
+  }, [refreshKey]);
 
 async function loadMedia() {
   try {
@@ -86,7 +89,6 @@ try {
   alert("حذف فایل با خطا مواجه شد.");
 }
 
-
 }
 
 function getType(item: MediaItem): Filter {
@@ -137,7 +139,6 @@ return items.filter((item) => {
 
   return matchesFilter && matchesSearch;
 });
-
 
 }, [items, filter, search]);
 
@@ -190,7 +191,6 @@ return ( <div className="rounded-2xl border border-red-200 bg-red-50 p-8 text-ce
     </button>
   </div>
 );
-
 
 }
 
