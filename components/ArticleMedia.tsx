@@ -105,14 +105,14 @@ if (
   );
 }
   if (article.image) {
-    return (
-      <img
-        src={article.image}
-        alt=""
-        className="mb-14 h-[260px] md:h-[300px] w-full rounded-3xl object-cover shadow-lg"
-      />
-    );
-  }
+  return (
+    <img
+      src={article.image}
+      alt=""
+      className="mx-auto mb-14 h-[220px] md:h-[260px] w-full max-w-2xl rounded-3xl object-cover shadow-lg"
+    />
+  );
+}
 
   return null;
 }
