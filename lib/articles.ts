@@ -38,7 +38,9 @@ export type Article = {
 type ArticleFrontMatter = Omit<Article, "slug" | "content">;
 
 export function getArticleSlugs(): string[] {
-  return fs.readdirSync(articlesDirectory);
+  return fs
+    .readdirSync(articlesDirectory)
+    .filter((file) => file.endsWith(".md"));
 }
 
 export function getArticleBySlug(
