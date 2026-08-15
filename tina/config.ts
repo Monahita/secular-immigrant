@@ -212,17 +212,27 @@ export default defineConfig({
 
       {
         name: "article",
-        label: "Articles",
-        path: "content/articles",
-        format: "md",
+label: "Articles",
+path: "content/articles",
+format: "md",
+
+ui: {
+  filename: {
+    slugify: (values) => {
+      return values.slug;
+    },
+  },
+},
 
         fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
+          
+            {
+  type: "string",
+  name: "slug",
+  label: "Slug",
+  required: true,
+  description: "برای آدرس مقاله فقط حروف انگلیسی، عدد و خط تیره استفاده کنید. مثال: women-life-freedom",
+
           },
 {
   type: "string",
