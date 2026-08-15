@@ -106,11 +106,13 @@ if (
 }
   if (article.image) {
   return (
-    <img
-      src={article.image}
-      alt=""
-      className="mx-auto mb-14 h-[220px] md:h-[260px] w-full max-w-2xl rounded-3xl object-cover shadow-lg"
-    />
+    <div className="my-10 flex justify-center">
+      <img
+        src={article.image}
+        alt=""
+        className="h-[200px] w-[320px] rounded-2xl object-cover shadow-md md:h-[230px] md:w-[420px]"
+      />
+    </div>
   );
 }
 
