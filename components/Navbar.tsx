@@ -35,17 +35,17 @@ export default function Navbar() {
   </div>
 )}
 
-  <span className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">
+  <span className="text-lg sm:text-xl lg:text-2xl font-extrabold tracking-tight text-[var(--primary)]">
     {site.siteName}
   </span>
 </Link>
 
-        <div className="flex items-center gap-8 text-sm font-medium text-gray-700">
+        <div className="flex items-center gap-3 text-xs font-medium text-gray-700 sm:gap-5 sm:text-sm lg:gap-8">
           {menuItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="relative transition duration-300 hover:text-[var(--primary)] after:absolute after:-bottom-1 after:right-0 after:h-0.5 after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full"
+              className="relative whitespace-nowrap transition duration-300 hover:text-[var(--primary)] ..."
             >
               {item.label}
             </Link>
