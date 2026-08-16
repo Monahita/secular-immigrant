@@ -94,7 +94,7 @@ export default async function ArticlePage({
               {article.category}
             </span>
 
-            <h1 className="mt-6 text-5xl font-extrabold leading-tight">
+            <h1 className="mt-6 text-3xl md:text-4xl font-extrabold leading-tight">
               {article.title}
             </h1>
 

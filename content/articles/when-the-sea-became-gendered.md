@@ -1,6 +1,7 @@
 ---
-title: 'وقتی دریا زنانه و مردانه شد '
-subtitle: 'جنسیت و منابع طبیعی  '
+title: "وقتی دریا زنانه و مردانه شد"
+slug: when-the-sea-became-gendered
+subtitle: "جنسیت و منابع طبیعی"
 category: اسلامگرایی
 tags:
   - جنسیت
