@@ -5,7 +5,7 @@ subtitle: جنسیت و منابع طبیعی
 category: اسلامگرایی
 tags:
   - جنسیت
-publishedAt: 2014-06-14T10:35:09.909Z
+publishedAt: 2012-06-01T10:35:09.909Z
 updatedAt: 2026-08-15T10:02:50.216Z
 media:
   gallery:
