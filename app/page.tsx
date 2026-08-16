@@ -8,30 +8,30 @@ export default function Home() {
   return (
     <main className="bg-[#fafafa]">
       <section className="bg-gradient-to-b from-orange-50 to-white">
-        <div className="max-w-5xl mx-auto px-6 py-32 text-center">
+        <div className="max-w-5xl mx-auto px-6 py-20 text-center">
           <span className="inline-block rounded-full bg-orange-100 px-4 py-2 text-sm text-orange-700">
             مجله شخصی
           </span>
 
-          <h1 className="mt-8 text-6xl font-extrabold text-[#F4A261] leading-tight">
+          <h1 className="mt-5 text-5xl font-extrabold text-[#F4A261] leading-tight">
             {frontmatter.heroTitle}
           </h1>
 
-          <p className="mt-8 text-2xl text-gray-700">
+          <p className="mt-5 text-xl text-gray-700">
             {frontmatter.heroSubtitle}
           </p>
 
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href={frontmatter.buttonLink}
-              className="rounded-xl bg-[#F4A261] px-8 py-4 text-white font-semibold hover:scale-105 transition"
+              className="rounded-xl bg-[#F4A261] px-7 py-3 text-white font-semibold hover:scale-105 transition"
             >
               {frontmatter.buttonText}
             </Link>
 
             <Link
               href="/about"
-              className="rounded-xl border border-[#F4A261] px-8 py-4 text-[#F4A261] font-semibold hover:bg-orange-50 transition"
+              className="rounded-xl border border-[#F4A261] px-7 py-3 text-[#F4A261] font-semibold hover:bg-orange-50 transition"
             >
               درباره من
             </Link>
@@ -39,15 +39,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-20">
-  <h2 className="text-3xl font-bold mb-8">
-    {frontmatter.introTitle}
-  </h2>
+      <section className="max-w-4xl mx-auto px-6 py-12">
+        <h2 className="text-3xl font-bold mb-5">
+          {frontmatter.introTitle}
+        </h2>
 
-  <p className="leading-9 text-gray-700">
-    {frontmatter.introText}
-  </p>
-</section>
+        <p className="leading-8 text-gray-700">
+          {frontmatter.introText}
+        </p>
+      </section>
 
       <FeaturedArticles />
     </main>
