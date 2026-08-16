@@ -39,16 +39,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <h2 className="text-3xl font-bold mb-5">
-          {frontmatter.introTitle}
-        </h2>
-
-        <p className="leading-8 text-gray-700">
-          {frontmatter.introText}
-        </p>
-      </section>
-
       <FeaturedArticles />
     </main>
   );
