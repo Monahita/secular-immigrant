@@ -105,16 +105,20 @@ export default async function ArticlePage({
             )}
 
             <div className="mt-8 flex flex-wrap gap-6 text-sm text-gray-500">
+  <span>
+    📅 انتشار: {formatDate(article.publishedAt)}
+  </span>
 
-              <span>
-                📅 {formatDate(article.publishedAt)}
-              </span>
+  {article.updatedAt && (
+    <span>
+      ✏️ به‌روزرسانی: {formatDate(article.updatedAt)}
+    </span>
+  )}
 
-              <span>
-                🕒 {article.readTime}
-              </span>
-
-            </div>
+  <span>
+    🕒 {article.readTime}
+  </span>
+</div>
 
           </header>
 

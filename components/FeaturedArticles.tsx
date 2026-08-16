@@ -40,7 +40,9 @@ function getCardMedia(article: {
 }
 
 export default function FeaturedArticles() {
-  const articles = getAllArticles().slice(0, 3);
+  const articles = getAllArticles()
+  .filter((article) => article.featured)
+  .slice(0, 3);
 
   return (
     
