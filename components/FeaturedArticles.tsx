@@ -46,12 +46,8 @@ export default function FeaturedArticles() {
 
   return (
     
-    <section className="max-w-6xl mx-auto px-6 py-12">
-      <h2 className="text-3xl font-bold text-center mb-12 text-red-600">
-
-</h2>
-
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <section className="max-w-6xl mx-auto px-6 py-6">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {articles.map((article) => {
         const cover = getCardMedia(article);
 
@@ -85,7 +81,6 @@ export default function FeaturedArticles() {
   )}
 
 </div>
-
 
             <div className="p-6">
               <span className="inline-block rounded-full bg-orange-100 px-3 py-1 text-sm text-orange-700">
