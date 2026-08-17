@@ -39,25 +39,45 @@ export async function generateMetadata({
 
   if (!article) return {};
 
+  const articleUrl =
+    `https://farsi.autonomy-secular.site/blog/${slug}`;
+
+  const shareImage =
+  article.media?.gallery?.[0] ||
+  "/images/share-default.png";
+
   return {
     title: article.title,
     description: article.excerpt,
 
+    alternates: {
+      canonical: articleUrl,
+    },
+
     openGraph: {
       title: article.title,
       description: article.excerpt,
-      url: `https://farsi.autonomy-secular.site/blog/${slug}`,
+      url: articleUrl,
       siteName: "مهاجر سکولار",
       locale: "fa_IR",
       type: "article",
-      images: [],
+
+      publishedTime: article.publishedAt,
+      modifiedTime: article.updatedAt,
+
+      images: [
+  {
+    url: shareImage,
+    alt: article.title,
+  },
+],
     },
 
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description: article.excerpt,
-      images: [],
+      images: [shareImage],
     },
   };
 }
