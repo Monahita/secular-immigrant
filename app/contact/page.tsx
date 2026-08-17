@@ -1,5 +1,4 @@
 import Image from "next/image";
-import ContactForm from "@/components/ContactForm";
 import { getPage } from "@/lib/content";
 
 export default function ContactPage() {
@@ -22,8 +21,16 @@ export default function ContactPage() {
       <p className="mx-auto mt-6 max-w-2xl text-center leading-8 text-gray-600">
         {frontmatter.paragraph1}
       </p>
-
-      <ContactForm />
+      <div className="mt-10 flex justify-center">
+      <a
+    href="https://www.autonomy-secular.site/kontakt/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="rounded-xl bg-[var(--primary)] px-8 py-3 font-semibold text-white transition hover:opacity-90"
+  >
+    ارسال پیام
+  </a>
+</div>
     </main>
   );
 }
