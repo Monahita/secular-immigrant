@@ -5,6 +5,7 @@ subtitle: جنسیت و منابع طبیعی
 category: اسلامگرایی
 tags:
   - جنسیت
+  - تبعیض جنسیتی
 publishedAt: 2012-06-01T10:35:09.909Z
 updatedAt: 2026-08-15T10:02:50.216Z
 media:
