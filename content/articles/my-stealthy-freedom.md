@@ -1,5 +1,6 @@
 ---
 slug: my-stealthy-freedom
+title: آزادی‌های بواشکی
 subtitle: حجاب اجباری و دیوار برلین
 category: حجاب
 publishedAt: 2025-05-11T22:26:27.740Z
