@@ -20,14 +20,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://farsi.autonomy-secular.site"),
 
-  title: {
-    default: site.siteName || "مهاجر سکولار",
-    template: `%s | ${site.siteName || "مهاجر سکولار"}`,
-  },
-
-  description:
-    site.tagline ||
-    "مجله‌ای برای آزادی، سکولاریسم، حقوق زنان، حقوق بشر و تجربه مهاجرت.",
+  title: "مهاجر سکولار",
+  description: "مجله شخصی درباره آزادی، حقوق بشر و سکولاریسم",
 
   keywords: [
     "سکولاریسم",
