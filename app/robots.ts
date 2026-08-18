@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://secular-immigrant.com/sitemap.xml",
+    sitemap: "https://farsi.autonomy-secular.site/",
   };
 }
