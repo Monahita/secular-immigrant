@@ -234,6 +234,13 @@ ui: {
   description: "برای آدرس مقاله فقط حروف انگلیسی، عدد و خط تیره استفاده کنید. مثال: women-life-freedom",
 
           },
+          {
+  type: "string",
+  name: "title",
+  label: "Title",
+  isTitle: true,
+  required: true,
+},
 {
   type: "string",
   name: "subtitle",
