@@ -145,6 +145,20 @@ export default async function ArticlePage({
           {/* Media */}
 
           <ArticleMedia article={article} />
+          {/* Tags */}
+
+{article.tags && article.tags.length > 0 && (
+  <div className="mt-8 mb-10 flex flex-wrap gap-2">
+    {article.tags.map((tag) => (
+      <span
+        key={tag}
+        className="rounded-full bg-orange-50 px-3 py-1 text-sm text-orange-700"
+      >
+        #{tag}
+      </span>
+    ))}
+  </div>
+)}
 
           {/* Article */}
 
