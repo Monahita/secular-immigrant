@@ -1,5 +1,0 @@
----
-slug: test-article
-subtitle: ''
----
-
