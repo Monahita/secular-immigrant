@@ -7,6 +7,9 @@ tags:
   - حجاب اجباری
 publishedAt: 2025-05-11T22:26:27.740Z
 updatedAt: 2026-08-17T10:27:24.882Z
+media:
+  gallery:
+    - /images/MSF.jpg
 featured: true
 ---
 
