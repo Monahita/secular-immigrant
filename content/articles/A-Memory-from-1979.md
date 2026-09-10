@@ -2,6 +2,7 @@
 slug: A-Memory-from-1979
 title: تکرار یک نگرانی از تهران ١٣٥٨ تا برلین و پاریس و نیویورک ١٤٠٥
 category: اسلامگرایی
+publishedAt: 2026-09-09T18:47:12.624Z
 updatedAt: 2026-09-10T18:32:34.844Z
 media:
   gallery:
