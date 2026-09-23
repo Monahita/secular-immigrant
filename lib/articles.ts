@@ -67,8 +67,8 @@ export function getArticleBySlug(
   const frontMatter = data as ArticleFrontMatter;
 
  return {
-  slug: realSlug,
   ...frontMatter,
+  slug: realSlug,
   content,
 };
 }
