@@ -1,21 +1,35 @@
 import type { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/articles";
 
+function getValidDate(value?: string): Date | undefined {
+  if (!value) return undefined;
+
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return undefined;
+  }
+
+  return date;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://farsi.autonomy-secular.site";
 
   const articles = getAllArticles();
 
-  const articleUrls = articles.map((article) => {
-  const cleanSlug = article.slug.replace(/^\/+/, "");
+  const articleUrls: MetadataRoute.Sitemap = articles.map((article) => {
+    const cleanSlug = article.slug.replace(/^\/+/, "");
 
-  return {
-    url: `${baseUrl}/blog/${cleanSlug}`,
-    lastModified: new Date(
-      article.updatedAt || article.publishedAt
-    ),
-  };
-});
+    const lastModified =
+      getValidDate(article.updatedAt) ??
+      getValidDate(article.publishedAt);
+
+    return {
+      url: `${baseUrl}/blog/${cleanSlug}`,
+      ...(lastModified ? { lastModified } : {}),
+    };
+  });
 
   return [
     {

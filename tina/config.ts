@@ -216,10 +216,10 @@ label: "Articles",
 path: "content/articles",
 format: "md",
 
-ui: {
+  ui: {
   filename: {
     slugify: (values) => {
-      return values.slug;
+      return String(values?.slug || "article");
     },
   },
 },
