@@ -1,5 +1,5 @@
 ---
-slug: one million signatures iran
+slug: one-million-signatures-iran
 title: کمپین «یك میلیون امضاء برای تغییر قوانین تبعیض‎آمیز» و دیاسپورا
 subtitle: 'کمپین یک میلیون امضا '
 category: تاریخ
