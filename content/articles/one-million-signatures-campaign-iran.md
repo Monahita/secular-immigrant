@@ -3,7 +3,7 @@ slug: one million signatures iran
 title: کمپین «یك میلیون امضاء برای تغییر قوانین تبعیض‎آمیز» و دیاسپورا
 subtitle: 'کمپین یک میلیون امضا '
 category: تاریخ
-publishedAt: 2026-09-21T16:07:41.938Z
+publishedAt: 2026-09-23T16:07:41.938Z
 readTime: '8 دقیقه '
 media:
   gallery:
