@@ -1,6 +1,8 @@
 ---
 slug: a-memory-from-1979
 title: تکرار یک نگرانی از تهران ١٣٥٨ تا برلین و پاریس و نیویورک ١٤٠٥
+publishedAt: 2026-09-10T20:08:43.133Z
+updatedAt: 2026-09-10T20:10:45.322Z
 media:
   gallery:
     - /images/kodakZanjir.jpg
